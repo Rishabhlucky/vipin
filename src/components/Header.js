@@ -1,21 +1,25 @@
 import Link from "next/link";
+import logo from "@/assets/logo.png"
 import { Menu, PhoneCall } from "lucide-react";
 import { FaStethoscope } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Header() {
   return (
     <header className="site-header">
       <div className="container nav">
-        <Link href="/" className="logo">
-          <span className="logo-mark animate__animated        animate__pulse"><FaStethoscope size={20} /></span>
-          Surgi<span>Care</span>
+        <Link href="/" className="logo rounded-full ">
+          <span className="logo-mark rounded-full animate__animated animate__pulse">
+            <Image src={logo} alt="logo/image" className="rounded-full hover:-translate-x-[12px] hover:-translate-y-[12px] duration-500"/>
+          </span>
+          <p className=" align-middle animate__animated animate__pulse hover:text-teal-800 hover:scale-105 transition duraction-300 text-xl font-bold">Ayugya <span>Mati</span></p>
         </Link>
 
         <nav className="desktop-nav">
-          <Link href="/">Home</Link>
-          <Link href="/products">Products</Link>
-          <Link href="/about">About</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/" className="hover:scale-105 transition duration-500 hover:border-b-blue-300">Home</Link>
+          <Link href="/products" className="hover:scale-105 transition duration-500 hover:border-b-blue-300">Products</Link>
+          <Link href="/about" className="hover:scale-105 transition duration-500 hover:border-b-blue-300">About</Link>
+          <Link href="/contact" className="hover:scale-105 transition duration-500 hover:border-b-blue-300">Contact</Link>
         </nav>
 
         <Link href="/contact" className="nav-cta animate__animated animate__shakeX">

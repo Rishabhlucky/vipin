@@ -1,9 +1,11 @@
 import Image from "next/image";
 import { Heart, Scale, Star } from "lucide-react";
+import Link from "next/link";
 
-export default function ProductCard({title, price,rating, review,image }) {
+export default function ProductCard({title, price,rating, review,image  }) {
+  // console.log(link , "Link ProductCrad Compo")
   return (
-    <div className=" bg-[#3796b3a8] p-2 rounded-2xl mt-4 text-[#ff00bf7d]">
+      <div className=" bg-[#3796b3a8] p-2 rounded-2xl mt-4 text-[#ff00bf7d]">
       <div className="relative overflow-hidden bg-white">
         {/* Discount Badge */}
         <div className="absolute left-0 top-0 z-10 bg-[#c026a0] px-3 py-1.5 text-[9px] font-bold text-white">
@@ -43,9 +45,10 @@ export default function ProductCard({title, price,rating, review,image }) {
         {/* Product Details */}
         <div className="px-3 pb-3 pt-3 rounded-lg bg-[#3796b3a8]">
           {/* Product Name */}
-          <h3 className="text-xl font-bold ">
+         <Link href={"/product-details"}> <h3 className="text-xl font-bold ">
             {title}
           </h3>
+          </Link>
 
           {/* Rating */}
           <div className="mt-5 flex items-center gap-1">
@@ -95,5 +98,6 @@ export default function ProductCard({title, price,rating, review,image }) {
         </div>
       </div>
     </div>
+    
   );
 }

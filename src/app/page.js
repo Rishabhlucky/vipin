@@ -21,7 +21,8 @@ import ProductCard from "@/components/ProductCard";
 import ScrollProgress from "@/components/scrollProgress";
 import Readout from "@/components/CountUp";
 import ProductSlider from "@/components/productSlider";
-import {productsData} from "@/data"
+import { faqs, productHome, productsData } from "@/data"
+import ProductCardHome from "@/components/ProductCardHome";
 
 const benefits = [
   "Quality-focused product selection",
@@ -125,10 +126,8 @@ export default function HomePage() {
             title="Surgical products for modern healthcare"
             text="From everyday surgical instruments to operating theatre solutions, build your procurement list around dependable products."
           />
-          <div className="product-grid animate__animated animate__fadeInUp">
-            {productsData.map((product) => (
-              <ProductCard key={product.title} title={product.title} price={product.price} rating={product.rating} review={product.review} image={product.image} />
-            ))}
+          <div className="w-full animate__animated animate__fadeInUp">
+            <ProductCardHome mapData={productHome} />
           </div>
           <div className="center-link">
             <Link href="/products" className="text-link">
@@ -138,12 +137,10 @@ export default function HomePage() {
         </div>
       </section>
       <section className="section">
-      <div className="container bg-mist-300 p-9">
-        <Faq />
-        <Faq />
-        <Faq />
-        <Faq />
-      </div>
+        <div className="container bg-mist-300 p-9">
+           {/* Faq section */}
+          {faqs.map((data) =><Faq question={data.question} answer={data.answer} />)}
+        </div>
       </section>
       <section className="section soft-section">
         <div className="container split-grid">
