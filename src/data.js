@@ -70,16 +70,16 @@ export const productsData = [
     image: productImgage1
   },
   {
-    title: "General Canula",
+    title: "Rishabh",
     type: 'canula',
-    description: "Reliable forceps, scissors, retractors and essential surgical sets.",
+    description: "Rishabh Canula forceps, scissors, retractors and essential surgical sets.",
     price: 2500,
     rating: [1, 2, 3],
     review: 24,
     image: productImgage1
   },
   {
-    title: "General Surgery Instruments2",
+    title: "Vipin  Surgery Instruments2",
     description: "Reliable forceps, scissors, retractors and essential surgical sets.",
     price: 2500,
     rating: [1, 2, 3],

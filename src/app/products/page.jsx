@@ -14,6 +14,7 @@ const initialFilter = {
 export default function OurProduct() {
     const [data, setData] = useState(productsData.slice(0, 10));
     const [filter, setFilter] = useState(initialFilter);
+    const [InputData, setInputData] = useState('');
 
     const handleCheckbox = (e) => {
         const { name, checked } = e.target;
@@ -29,6 +30,16 @@ export default function OurProduct() {
         setData(productsData);
     };
 
+
+  const handleSearch = () => {
+    if(InputData.length <1) return 
+    const filter = data.filter((data) =>data.title.includes(InputData));
+    console.log("Input Filter ", filter)
+    if(!filter) {
+      return setData("No data fount ")
+    }
+    setData(filter)
+  }
     useEffect(() => {
         // Get only the filters that are checked
         const activeFilters = Object.keys(filter).filter(
@@ -48,10 +59,10 @@ export default function OurProduct() {
 
         setData(filteredProducts);
     }, [filter]);
-
+ console.log(InputData)
     return (
         <div className='flex flex-row-reverse gap-5 h-full'>
-            <div className="product-grid animate__animated animate__fadeInUp">
+            <div className=" product-grid animate__animated animate__fadeInUp">
                 {data.map((product, index) => (
                     <ProductCard
                         key={index}
@@ -66,18 +77,21 @@ export default function OurProduct() {
             </div>
 
             {/* Filetr section  */}
-            <div className=" bg-[#3796b3a8] fixed top-16  left-0 h-64">
-          <h3>Search for Filter Product</h3>
+            <div className=" bg-[#02181fa8] rounded-md p-5 w-[200px] sticky bottom-0 top-20  left-0 h-96  ml-2 mt-2 text-white/90">
+          <h3>Filter Product</h3>
 
           <div>
-            <div>
-              <input type="text" />
-              <Search />
+            <div className='flex mt-3 -ml-3 gap-1'>
+              <input type="text"
+              onChange={(e)=>setInputData(e.target.value)}
+               value ={InputData} 
+               className='bg-white rounded w-full outline-none border-0 text-black/80' />
+              <Search onClick={handleSearch}/>
             </div>
           </div>
 
           <div>
-            <div className="m-2 flex items-center gap-2">
+            <div className="mt-5 flex items-center gap-2">
               <input
                 type="checkbox"
                 id="mask"
@@ -88,7 +102,7 @@ export default function OurProduct() {
               <label htmlFor="mask">Mask</label>
             </div>
 
-            <div className="m-2 flex items-center gap-2">
+            <div className="mt-5 flex items-center gap-2">
               <input
                 type="checkbox"
                 id="canula"
@@ -99,7 +113,7 @@ export default function OurProduct() {
               <label htmlFor="canula">Canula</label>
             </div>
 
-            <div className="m-2 flex items-center gap-2">
+            <div className="mt-5 flex items-center gap-2">
               <input
                 type="checkbox"
                 id="non-vented"
@@ -112,7 +126,7 @@ export default function OurProduct() {
 
             <button
               onClick={handleClearFilter}
-              className="cursor-pointer rounded-lg bg-blue-500 px-4 py-2 text-base font-bold text-white"
+              className="mt-3 cursor-pointer botton rounded-lg bg-blue-500 px-4 py-2 text-base font-bold text-white cursor-pointer"
             >
               Clear
             </button>

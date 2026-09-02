@@ -57,7 +57,7 @@ console.log(products , name, productData, "Check URL ")
             />
 
             <Link
-              href="/products"
+              href={`/${products}`}
               className="transition hover:text-green-400"
             >
               Tracheostomy Tube

@@ -35,13 +35,8 @@ export default function HomePage() {
   const [ref, visible] = useReveal(0.15)
   return (
     <>
-      <section className="section">
-        <div className="container">
-          <h3 className="text-2xl">Hello SLider</h3>
-
-        </div>
+      <section className="mt-5">
         <ProductSlider />
-
       </section>
 
       <section className="hero section">
@@ -110,7 +105,7 @@ export default function HomePage() {
             <Readout label="Institutional clients" value={50} />
           </div>
           <div>
-            <Readout label="Enquiry support" value={10} />
+            <Readout label="Enquiry support" value={30} />
           </div>
           <div>
             <Readout label="Years of experience" value={6} />

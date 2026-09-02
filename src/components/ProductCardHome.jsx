@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useState } from "react";
-import {productHome} from "@/data"
 import Link from 'next/link'
 
 
@@ -10,7 +9,7 @@ export default function ProductCardHome({mapData ,link}) {
   const [active, setActive] = useState(null);
 
   return (
-    <div className="grid grid-cols-1 gap-5 p-5 sm:grid-cols-2 lg:grid-cols-4">
+    <div className="grid grid-cols-1 gap-5 p-5 sm:grid-cols-2 lg:grid-cols-4 ">
       {mapData.map((product) => (
        <Link href={`/${link?`${link}/${product.name}/` :`${product.name}/`}`} key={product.name}> <div
           key={product.id}
@@ -19,7 +18,7 @@ export default function ProductCardHome({mapData ,link}) {
           className={`
             group
             w-[270px]
-            h-[360px]
+            h-[380px]
             cursor-pointer
             
             bg-white
@@ -35,7 +34,7 @@ export default function ProductCardHome({mapData ,link}) {
           `}
         >
           {/* Image */}
-          <div className="relative w-full h-[310px]">
+          <div className="relative mt-4 w-full h-[310px]">
             <Image
               src={product.image}
               alt={product.name}
@@ -51,7 +50,7 @@ export default function ProductCardHome({mapData ,link}) {
           </div>
 
           {/* Product Name */}
-          <div className="flex h-[50px] items-center px-7">
+          <div className="flex h-auto items-center px-7">
             <h3
               className={`
                 text-[14px]

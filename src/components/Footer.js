@@ -4,13 +4,13 @@ import { FaLinkedinIn, FaInstagram, FaFacebookF } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="footer">
+    <footer className="footer z-20 bg-black">
       <div className="container footer-grid">
         <div>
           <Link href="/" className="logo footer-logo">Surgi<span>Care</span></Link>
           <p>Professional surgical instruments and medical equipment supply for hospitals, clinics and healthcare professionals.</p>
           <div className="socials">
-            <a href="#" aria-label="LinkedIn"><FaLinkedinIn /></a>
+            <a href="#" className="bg-teal-500" aria-label="LinkedIn"><FaLinkedinIn /></a>
             <a href="#" aria-label="Instagram"><FaInstagram /></a>
             <a href="#" aria-label="Facebook"><FaFacebookF /></a>
           </div>

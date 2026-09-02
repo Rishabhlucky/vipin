@@ -16,6 +16,7 @@ const ScrollProgress = () => {
       }
 
       const progress = (scrollTop / documentHeight) * 100;
+      console.log(progress , scrollProgress , "Progre")
 
       setScrollProgress(Math.min(100, Math.max(0, progress)));
     };
