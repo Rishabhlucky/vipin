@@ -1,5 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss";
-
 :root {
   --bg: #f7fbfc;
   --surface: #ffffff;
@@ -10,6 +10,7 @@
   --line: #dce9eb;
   --soft: #eaf6f7;
   --shadow: 0 20px 60px rgba(15, 57, 65, .10);
+  --font-inter :"Roboto"
 }
 
 * { box-sizing: border-box; }
@@ -24,7 +25,9 @@ a { color: inherit; text-decoration: none; }
 button, input, textarea { font: inherit; }
 .container { width: min(1160px, calc(100% - 40px)); margin: auto; }
 .section { padding: 100px 0; }
-
+.logo-name {
+  font-family: Roboto;
+}
 .site-header {
   position: sticky;
   top: 0;
@@ -44,7 +47,7 @@ button, input, textarea { font: inherit; }
 .nav-cta {
    position: relative;
   overflow: hidden;
-  background:  #212271;
+  background:  var(--primary-dark);
   color: white;
   border: none;
   padding: 10px 20px;
@@ -57,7 +60,7 @@ button, input, textarea { font: inherit; }
     content: "";
   position: absolute;
   inset: 0;
-  background: #00939c;;
+  background: var(--primary);
   transform: translateX(100%);
   transition: transform 0.5s ease;
   z-index: -1;
@@ -224,3 +227,7 @@ button.botton:hover {
   top: 20px;
   /* height: 100%; */
 }
+
+
+/* AI CSS  */
+

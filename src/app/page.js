@@ -1,6 +1,5 @@
 "use client"
 // import useReveal from "../hooks/useReveal";
-import useReveal from "../hooks/useReveal";
 import Faq from "@/components/faq";
 import Link from "next/link";
 import {
@@ -24,6 +23,8 @@ import ProductSlider from "@/components/productSlider";
 import { faqs, productHome, productsData } from "@/data"
 import ProductCardHome from "@/components/ProductCardHome";
 
+import useReveal from '../hooks/useReveal'
+
 const benefits = [
   "Quality-focused product selection",
   "Hospital and clinic supply support",
@@ -32,7 +33,7 @@ const benefits = [
 ];
 
 export default function HomePage() {
-  const [ref, visible] = useReveal(0.15)
+  const [ref, visible] = useReveal(0.4)
   return (
     <>
       <section className="mt-5">
@@ -131,9 +132,9 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+  {/* --------Faq section------------------ */}
       <section className="section">
-        <div className="container bg-mist-300 p-9">
-           {/* Faq section */}
+        <div ref={ref} className={`container bg-mist-300 p-9 ${visible ?"animate__animated animate__fadeInRight" :''}`}>
           {faqs.map((data) =><Faq question={data.question} answer={data.answer} />)}
         </div>
       </section>
